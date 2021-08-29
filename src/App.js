@@ -6,11 +6,11 @@ import Values from 'values.js'
 function App() {
   const [color,setColor]=useState("");
   const [error,setError]=useState(false);
-  const [list,setList] =useState([]);
+  const [list,setList] =useState(new Values(`#059c69`).all(10));
   const handleSubmit = (e)=>{
     e.preventDefault()
     try{
-      let newColors = new Values(color).all(10)
+      let newColors = new Values(`#${color}`).all(10)
       setList(newColors)
       setError(false)
     }catch(error){
@@ -23,7 +23,7 @@ function App() {
       <section className="container">
         <h3>COLOR MACHINE</h3>
         <form onSubmit={handleSubmit}>
-          <input className={`${error?"error":"null"}`} type="text" value={color?color:`#${color}`} placeholder="#fff" maxLength="7" onChange={(e)=>setColor(e.target.value)}/>
+          <input className={`${error?"error":"null"}`} type="text"  placeholder="#059c69" maxLength="7" onChange={(e)=>setColor(e.target.value)}/>
           <button type="submit" className="btn">
             submit
           </button>

@@ -198,6 +198,7 @@ input.error {
   text-transform: none;
 }
 .percent-value {
+  
   margin-bottom: 0;
   color: var(--clr-grey-1);
 }
@@ -216,4 +217,11 @@ input.error {
   text-transform: uppercase;
   font-size: 0.85rem;
   margin-top: 0.5rem;
+}
+.noti{
+  opacity: 0;
+  transition: 0.2s opacity ease-in-out;
+}
+.color:hover .noti{
+    opacity: 1;
 }
